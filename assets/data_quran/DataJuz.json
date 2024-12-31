@@ -1,0 +1,182 @@
+[
+    {
+      "id": 1,
+      "name": "AL-FATIHAH",
+      "startVerse": 1,
+      "startSurah": "AL-FATIHAH"
+    },
+    {
+      "id": 2,
+      "name": "AL-BAQARAH",
+      "startVerse": 142,
+      "startSurah": "AL-BAQARAH"
+    },
+    {
+      "id": 3,
+      "name": "AL-BAQARAH",
+      "startVerse": 253,
+      "startSurah": "AL-BAQARAH"
+    },
+    {
+      "id": 4,
+      "name": "ALI 'IMRAN",
+      "startVerse": 93,
+      "startSurah": "ALI 'IMRAN"
+    },
+    {
+      "id": 5,
+      "name": "AN-NISA'",
+      "startVerse": 24,
+      "startSurah": "AN-NISA'"
+    },
+    {
+      "id": 6,
+      "name": "AN-NISA'",
+      "startVerse": 148,
+      "startSurah": "AN-NISA'"
+    },
+    {
+      "id": 7,
+      "name": "AL-MA'IDAH",
+      "startVerse": 82,
+      "startSurah": "AL-MA'IDAH"
+    },
+    {
+      "id": 8,
+      "name": "AL-AN'AM",
+      "startVerse": 111,
+      "startSurah": "AL-AN'AM"
+    },
+    {
+      "id": 9,
+      "name": "AL-A'RAF",
+      "startVerse": 88,
+      "startSurah": "AL-A'RAF"
+    },
+    {
+      "id": 10,
+      "name": "AL-ANFAL",
+      "startVerse": 41,
+      "startSurah": "AL-ANFAL"
+    },
+    {
+      "id": 11,
+      "name": "AT-TAUBAH",
+      "startVerse": 93,
+      "startSurah": "AT-TAUBAH"
+    },
+    {
+      "id": 12,
+      "name": "HUD",
+      "startVerse": 16,
+      "startSurah": "HUD"
+    },
+    {
+      "id": 13,
+      "name": "YUSUF",
+      "startVerse": 53,
+      "startSurah": "YUSUF"
+    },
+    {
+      "id": 14,
+      "name": "AL-HIJR",
+      "startVerse": 1,
+      "startSurah": "AL-HIJR"
+    },
+    {
+      "id": 15,
+      "name": "AL-ISRA'",
+      "startVerse": 1,
+      "startSurah": "AL-ISRA'"
+    },
+    {
+      "id": 16,
+      "name": "AL-KAHF",
+      "startVerse": 75,
+      "startSurah": "AL-KAHF"
+    },
+    {
+      "id": 17,
+      "name": "AL-ANBIYA",
+      "startVerse": 1,
+      "startSurah": "AL-ANBIYA"
+    },
+    {
+      "id": 18,
+      "name": "AL-MU'MINUN",
+      "startVerse": 1,
+      "startSurah": "AL-MU'MINUN"
+    },
+    {
+      "id": 19,
+      "name": "AL-FURQON",
+      "startVerse": 21,
+      "startSurah": "AL-FURQON"
+    },
+    {
+      "id": 20,
+      "name": "AN-NAML",
+      "startVerse": 56,
+      "startSurah": "AN-NAML"
+    },
+    {
+      "id": 21,
+      "name": "AL-ANKABUT",
+      "startVerse": 46,
+      "startSurah": "AL-ANKABUT"
+    },
+    {
+      "id": 22,
+      "name": "AL-AHZAB",
+      "startVerse": 31,
+      "startSurah": "AL-AHZAB"
+    },
+    {
+      "id": 23,
+      "name": "YA SIN",
+      "startVerse": 28,
+      "startSurah": "YA SIN"
+    },
+    {
+      "id": 24,
+      "name": "AZ-ZUMAR",
+      "startVerse": 32,
+      "startSurah": "AZ-ZUMAR"
+    },
+    {
+      "id": 25,
+      "name": "FUSSILAT",
+      "startVerse": 47,
+      "startSurah": "FUSSILAT"
+    },
+    {
+      "id": 26,
+      "name": "AL-AHQAF",
+      "startVerse": 1,
+      "startSurah": "AL-AHQAF"
+    },
+    {
+      "id": 27,
+      "name": "AZ-ZARIYAT",
+      "startVerse": 31,
+      "startSurah": "AZ-ZARIYAT"
+    },
+    {
+      "id": 28,
+      "name": "AL-MUJADILAH",
+      "startVerse": 1,
+      "startSurah": "AL-MUJADILAH"
+    },
+    {
+      "id": 29,
+      "name": "AL-MULK",
+      "startVerse": 1,
+      "startSurah": "AL-MULK"
+    },
+    {
+      "id": 30,
+      "name": "AN-NABA'",
+      "startVerse": 1,
+      "startSurah": "AN-NABA'"
+  }
+]

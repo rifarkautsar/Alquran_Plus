@@ -1,0 +1,29 @@
+import json
+
+# Load DataAyat.json dan DataTerjemah.json
+with open('DataAyat.json', 'r', encoding='utf-8') as ayat_file:
+    data_ayat = json.load(ayat_file)
+
+with open('DataTerjemah.json', 'r', encoding='utf-8') as terjemah_file:
+    data_terjemah = json.load(terjemah_file)
+
+# Gabungkan berdasarkan urutan
+combined_data = []
+for idx, ayat in enumerate(data_ayat["verses"]):
+    translation_text = (
+        data_terjemah["translations"][idx]["text"]
+        if idx < len(data_terjemah["translations"])
+        else "Terjemahan tidak tersedia"
+    )
+    combined_data.append({
+        "verse_key": ayat["verse_key"],
+        "text_uthmani": ayat["text_uthmani"],
+        "translation": translation_text
+    })
+
+# Simpan data gabungan ke file baru
+combined_result = {"verses": combined_data}
+with open('CombinedAyatTerjemah.json', 'w', encoding='utf-8') as output_file:
+    json.dump(combined_result, output_file, ensure_ascii=False, indent=2)
+
+print("File CombinedAyatTerjemah.json berhasil dibuat.")
