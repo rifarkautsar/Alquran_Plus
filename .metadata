@@ -15,7 +15,14 @@ migration:
     - platform: root
       create_revision: 603104015dd692ea3403755b55d07813d5cf8965
       base_revision: 603104015dd692ea3403755b55d07813d5cf8965
+<<<<<<< HEAD
     - platform: web
+=======
+    - platform: android
+      create_revision: 603104015dd692ea3403755b55d07813d5cf8965
+      base_revision: 603104015dd692ea3403755b55d07813d5cf8965
+    - platform: ios
+>>>>>>> d6d7a1194a7d70f7da7e547e639cd249d8900b84
       create_revision: 603104015dd692ea3403755b55d07813d5cf8965
       base_revision: 603104015dd692ea3403755b55d07813d5cf8965
 
