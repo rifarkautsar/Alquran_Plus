@@ -1,31 +1,59 @@
-import 'package:location/location.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
 
 class LocationController {
-  final Location _location = Location();
-
-  Future<LocationData?> getLocation() async {
+  // Mendapatkan posisi lokasi saat ini
+  static Future<Position?> getCurrentLocation() async {
     bool serviceEnabled;
-    PermissionStatus permissionGranted;
+    LocationPermission permission;
 
-    // Periksa apakah layanan lokasi aktif
-    serviceEnabled = await _location.serviceEnabled();
+    // Memeriksa apakah layanan lokasi aktif
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      serviceEnabled = await _location.requestService();
-      if (!serviceEnabled) {
+      return null;
+    }
+
+    // Memeriksa dan meminta izin lokasi jika diperlukan
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
         return null;
       }
     }
 
-    // Periksa izin akses lokasi
-    permissionGranted = await _location.hasPermission();
-    if (permissionGranted == PermissionStatus.denied) {
-      permissionGranted = await _location.requestPermission();
-      if (permissionGranted != PermissionStatus.granted) {
-        return null;
-      }
+    if (permission == LocationPermission.deniedForever) {
+      return null;
     }
 
-    // Dapatkan lokasi pengguna
-    return await _location.getLocation();
+    // Mengatur parameter akurasi lokasi
+    LocationSettings locationSettings = LocationSettings(
+      accuracy: LocationAccuracy.high,
+    );
+
+    return await Geolocator.getCurrentPosition(
+      locationSettings: locationSettings,
+    );
+  }
+
+  // Mendapatkan nama tempat berdasarkan koordinat
+  static Future<String?> getPlaceName(double latitude, double longitude) async {
+    try {
+      List<Placemark> placemarks =
+          await placemarkFromCoordinates(latitude, longitude);
+      if (placemarks.isNotEmpty) {
+        final place = placemarks.first;
+        // Kembalikan informasi detail lokasi
+        return [
+          place.subLocality, // Nama area kecil (kelurahan)
+          place.locality, // Kota
+          place.administrativeArea, // Provinsi
+          place.country // Negara
+        ].where((element) => element != null && element.isNotEmpty).join(', ');
+      }
+    } catch (e) {
+      return null;
+    }
+    return null;
   }
 }

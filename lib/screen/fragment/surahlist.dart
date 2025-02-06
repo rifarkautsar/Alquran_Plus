@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:alquran_plus/models/quran_model.dart';
 import 'package:alquran_plus/screen/fragment/surahdetail.dart';
@@ -25,23 +24,36 @@ class SurahList extends StatelessWidget {
                     color: const Color(0xFFF1E4C6),
                   ),
                   child: Center(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: CachedNetworkImageProvider(
-                              'assets/images/logo_id.png'),
-                          fit: BoxFit.cover,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          alignment: Alignment.center,
+                          width: 36,
+                          height: 36,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Color(0xFFBBA27A)),
                         ),
-                      ),
-                      width: 35,
-                      height: 35,
-                      child: Center(
-                        child: Text(
+                        Container(
+                          alignment: Alignment.center,
+                          width: 31,
+                          height: 31,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Color(0xFFF1E4C6),
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        Text(
                           surah.id.toString(),
-                          style: TextStyle(color: Colors.white, fontSize: 11),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
                         ),
-                      ),
+                      ],
                     ),
                   ),
                 ),

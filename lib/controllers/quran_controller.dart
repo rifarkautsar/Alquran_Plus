@@ -6,6 +6,7 @@ class QuranController {
   List<Surah> surahList = [];
   List<Juz> juzList = [];
 
+  /// Load Surah Data from JSON
   Future<void> loadSurahData() async {
     try {
       final String response =
@@ -17,7 +18,7 @@ class QuranController {
     }
   }
 
-  // Fungsi untuk mendapatkan detail surah berdasarkan ID
+  /// Get Surah Details by ID
   Surah? getSurahDetails(int surahId) {
     try {
       return surahList.firstWhere((surah) => surah.id == surahId);
@@ -27,6 +28,7 @@ class QuranController {
     }
   }
 
+  /// Load Juz Data from JSON
   Future<void> loadJuzData() async {
     try {
       final String response =
@@ -38,7 +40,7 @@ class QuranController {
     }
   }
 
-  // Muat kedua data Surah dan Juz
+  /// Load both Surah and Juz Data
   Future<void> loadAllData() async {
     await loadSurahData();
     await loadJuzData();

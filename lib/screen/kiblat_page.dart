@@ -107,7 +107,7 @@ class KiblatCompassState extends State<KiblatCompass> {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'Putar perangkat hingga panah menunjuk ke atas',
+                    'Kiblat berada di atas arah kepala kabah',
                     style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                 ],

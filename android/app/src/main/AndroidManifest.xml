@@ -4,9 +4,15 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
 
     <application
-        android:label="alquran_plus"
+        android:label="AlquranPlus"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -27,6 +33,9 @@
                 android:value="@integer/google_play_services_version"
                 android:resource="@style/NormalTheme"
               />
+              <meta-data
+        android:name="com.google.firebase.messaging.default_notification_channel_id"
+        android:value="adzan_channel" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -37,6 +46,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        
+
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

@@ -1,0 +1,56 @@
+class Kota {
+  final String nama;
+  final double latitude;
+  final double longitude;
+
+  Kota(this.nama, this.latitude, this.longitude);
+
+  static List<Kota> daftarKota = [
+    Kota("Jakarta", -6.2088, 106.8456),
+    Kota("Bandung", -6.9175, 107.6191),
+    Kota("Surabaya", -7.2575, 112.7521),
+    Kota("Yogyakarta", -7.7956, 110.3695),
+    Kota("Medan", 3.5952, 98.6722),
+    Kota("Makassar", -5.1477, 119.4327),
+    Kota("Denpasar", -8.6705, 115.2126),
+    Kota("Balikpapan", -1.2379, 116.8529),
+    Kota("Samarinda", -0.5022, 117.1536),
+    Kota("Pekanbaru", 0.5333, 101.4500),
+    Kota("Palembang", -2.9909, 104.7564),
+    Kota("Banda Aceh", 5.5483, 95.3238),
+    Kota("Semarang", -6.9667, 110.4167),
+    Kota("Malang", -7.9787, 112.5617),
+    Kota("Banjarmasin", -3.3246, 114.5908),
+    Kota("Pontianak", -0.0228, 109.3340),
+    Kota("Manado", 1.4748, 124.8421),
+    Kota("Padang", -0.9492, 100.3543),
+    Kota("Palangkaraya", -2.2096, 113.9160),
+    Kota("Jayapura", -2.5916, 140.6689),
+    Kota("Kupang", -10.1788, 123.5977),
+    Kota("Ambon", -3.6548, 128.1904),
+    Kota("Ternate", 0.7916, 127.3634),
+    Kota("Mataram", -8.5833, 116.1167),
+    Kota("Cirebon", -6.7173, 108.5523),
+    Kota("Bogor", -6.5950, 106.8166),
+    Kota("Depok", -6.4025, 106.7942),
+    Kota("Bekasi", -6.2383, 106.9756),
+    Kota("Tangerang", -6.1701, 106.6300),
+    Kota("Tasikmalaya", -7.3514, 108.2228),
+    Kota("Garut", -7.2147, 107.9063),
+    Kota("Cimahi", -6.8721, 107.5429),
+    Kota("Magelang", -7.4706, 110.2170),
+    Kota("Purwokerto", -7.4213, 109.2340),
+    Kota("Kediri", -7.8484, 112.0175),
+    Kota("Jember", -8.1616, 113.7033),
+    Kota("Sidoarjo", -7.4469, 112.7170),
+    Kota("Gresik", -7.1569, 112.6554),
+    Kota("Tuban", -6.8975, 112.0649),
+    Kota("Bengkulu", -3.8004, 102.2655),
+    Kota("Palu", -0.8989, 119.8707),
+    Kota("Kendari", -3.9917, 122.5185),
+    Kota("Batam", 1.0456, 104.0305),
+    Kota("Tanjung Pinang", 0.9167, 104.4450),
+    Kota("Bangka", -2.0752, 106.1403),
+    Kota("Belitung", -2.8689, 107.9165),
+  ];
+}

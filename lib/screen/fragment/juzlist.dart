@@ -8,11 +8,6 @@ class JuzList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Menampilkan pesan jika juzList kosong
-    if (controller.juzList.isEmpty) {
-      return const Center(child: Text("No Juz available"));
-    }
-
     return ListView.builder(
       itemCount: controller.juzList.length,
       itemBuilder: (context, index) {

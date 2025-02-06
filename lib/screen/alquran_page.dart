@@ -6,6 +6,7 @@ import 'package:alquran_plus/widget/menu.dart';
 import 'package:alquran_plus/widget/custom_appbar.dart';
 import 'package:alquran_plus/screen/fragment/surahlist.dart';
 import 'package:alquran_plus/screen/fragment/juzlist.dart';
+import 'fragment/bookmark.dart';
 
 class AlquranPage extends StatefulWidget {
   const AlquranPage({super.key});
@@ -68,7 +69,7 @@ class AlquranPageState extends State<AlquranPage> {
             tabs: [
               Tab(text: 'SURAH'),
               Tab(text: 'JUZ'),
-              Tab(text: 'LAINNYA'),
+              Tab(text: 'BOOKMARK'),
             ],
           ),
         ),
@@ -78,7 +79,7 @@ class AlquranPageState extends State<AlquranPage> {
             SurahList(
                 surahList: filteredSurahList), // Kirim daftar yang difilter
             JuzList(controller: controller), // Halaman daftar Juz
-            const Center(child: Text('Konten Lainnya')),
+            BookmarkPage()
           ],
         ),
       ),

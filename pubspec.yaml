@@ -31,28 +31,33 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-
   intl: ^0.20.0
   dio: ^5.7.0
   get: ^4.6.6
   http: ^1.2.2
-
+  audioplayers: ^6.1.0
+  flutter_local_notifications: ^18.0.1
+  flutter_launcher_icons: ^0.14.3
   # Optimasi
   provider: ^6.1.2
-  cached_network_image: ^3.4.1
-
+  path_provider: ^2.1.5
   # Tanggal
   hijri: ^3.0.0
+  #penyimpanan
+  shared_preferences: ^2.3.5 
+  #waktu dan tempat
   geolocator: ^13.0.2
   flutter_compass: ^0.8.1
-  shared_preferences: ^2.3.5  
   adhan: ^2.0.0+1
   location: ^7.0.1
-  flutter_local_notifications: ^18.0.1
+  geocoding: ^3.0.0
+  latlong2: ^0.9.1
+  timezone: ^0.10.0
+  
+flutter_icons:
+  android: true
+  image_path: "assets/images/icon_app.png"
   
 dev_dependencies:
   flutter_test:
@@ -85,9 +90,11 @@ flutter:
      - assets/data_quran/DataJuz.json
      - assets/data_quran/DataAyat.json
      - assets/images/header_surah.png
-     - assets/images/logo_id.png
+     - assets/images/icon.png
      - assets/images/compass.png
      - assets/images/icon_google.png
+     - assets/audio/adzan.mp3
+     - assets/images/icon_app.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -105,16 +112,11 @@ flutter:
     - family: Arabic
       fonts:
         - asset: assets/fonts/Traditional-Arabic-Regular.ttf
-    - family: Amiri
-      fonts:
-        - asset: assets/fonts/AmiriQuran-Regular.ttf
+    
     - family: Arab
       fonts:
         - asset: assets/fonts/Arab.ttf
-    - family: Arab2
-      fonts:
-        - asset: assets/fonts/Arab2.ttf
-    
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

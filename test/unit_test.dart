@@ -1,40 +1,55 @@
+import 'package:alquran_plus/screen/waktu_sholat_page.dart';
+import 'package:alquran_plus/widget/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:alquran_plus/widget/custom_searchbar.dart';
+import 'package:alquran_plus/screen/alquran_page.dart';
 
 void main() {
-  testWidgets('CustomSearchBar memanggil onSearch dengan nilai yang benar',
-      (WidgetTester tester) async {
-    String searchValue = '';
-
+  testWidgets('Navigasi ke halaman Al-Quran', (WidgetTester tester) async {
+    // Build widget dengan Menu
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
-          body: CustomSearchBar(
-            onSearch: (value) {
-              searchValue = value;
-            },
-          ),
+          appBar: AppBar(), // Tambahkan AppBar untuk memunculkan drawer icon
+          drawer: Menu(),
         ),
       ),
     );
 
-    // Mengetuk ikon pencarian untuk memperluas input
-    await tester.tap(find.byIcon(Icons.search));
+    // Buka drawer
+    expect(find.byTooltip('Open navigation menu'), findsOneWidget);
+    await tester.tap(find.byTooltip('Open navigation menu'));
     await tester.pumpAndSettle();
 
-    // Memasukkan teks ke dalam TextField
-    await tester.enterText(find.byType(TextField), 'Al-Fatiha');
+    // Tap pada menu Al-Quran
+    await tester.tap(find.text('Al-Quran'));
     await tester.pumpAndSettle();
 
-    // Memastikan onSearch dipanggil dengan nilai yang benar
-    expect(searchValue, 'Al-Fatiha');
+    // Pastikan halaman yang ditampilkan adalah AlquranPage
+    expect(find.byType(AlquranPage), findsOneWidget);
+  });
 
-    // Mengetuk ikon close untuk menutup input
-    await tester.tap(find.byIcon(Icons.close));
+  testWidgets('Navigasi ke halaman Waktu Shalat', (WidgetTester tester) async {
+    // Build widget dengan Menu
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(), // Tambahkan AppBar untuk memunculkan drawer icon
+          drawer: Menu(),
+        ),
+      ),
+    );
+
+    // Buka drawer
+    expect(find.byTooltip('Open navigation menu'), findsOneWidget);
+    await tester.tap(find.byTooltip('Open navigation menu'));
     await tester.pumpAndSettle();
 
-    // Memastikan onSearch dipanggil dengan string kosong
-    expect(searchValue, '');
+    // Tap pada menu Al-Quran
+    await tester.tap(find.text('Waktu Shalat'));
+    await tester.pumpAndSettle();
+
+    // Pastikan halaman yang ditampilkan adalah AlquranPage
+    expect(find.byType(WaktuSholatPage), findsOneWidget);
   });
 }

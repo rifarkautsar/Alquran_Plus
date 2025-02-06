@@ -1,11 +1,9 @@
-import 'package:alquran_plus/screen/about_us_page.dart';
+import 'package:alquran_plus/screen/aboutus_page.dart';
 import 'package:alquran_plus/screen/alquran_page.dart';
 import 'package:alquran_plus/screen/kiblat_page.dart';
-import 'package:alquran_plus/screen/login.dart';
-// import 'package:alquran_plus/screen/beranda_page.dart';
+import 'package:alquran_plus/screen/waktu_sholat_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hijri/hijri_calendar.dart';
-import 'package:alquran_plus/screen/register.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -109,7 +107,7 @@ class Menu extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            'MAGHRIB 17:51',
+                            'ASHAR 15:17',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.teal.shade700,
@@ -133,17 +131,6 @@ class Menu extends StatelessWidget {
                 horizontal: 0,
               ),
               children: [
-                // ListTile(
-                //   leading: Icon(Icons.home, color: Colors.black38),
-                //   title: Text('Beranda'),
-                //   onTap: () {
-                //     Navigator.pop(context);
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(builder: (context) => const Beranda()),
-                //     );
-                //   },
-                // ),
                 ListTile(
                   leading: Icon(Icons.menu_book, color: Colors.black38),
                   title: Text('Al-Quran'),
@@ -160,7 +147,11 @@ class Menu extends StatelessWidget {
                   title: Text('Waktu Sholat'),
                   onTap: () {
                     Navigator.pop(context);
-                    // Tambahkan navigasi ke halaman Waktu Sholat
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => WaktuSholatPage()),
+                    );
                   },
                 ),
                 ListTile(
@@ -174,20 +165,11 @@ class Menu extends StatelessWidget {
                     );
                   },
                 ),
-                ListTile(
-                  leading: Icon(Icons.book, color: Colors.black38),
-                  title: Text('Hisnul Muslim'),
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => KiblatCompass()),
-                    );
-                  },
-                ),
                 const SizedBox(
-                  height: 230,
+                  height: 370,
                 ),
+                Divider(height: 1, color: Colors.grey.shade300),
+
                 ListTile(
                   leading: Icon(Icons.info_outline, color: Colors.black38),
                   title: Text('About Us'),
@@ -199,39 +181,39 @@ class Menu extends StatelessWidget {
                     );
                   },
                 ),
-                Divider(height: 1, color: Colors.grey.shade300),
                 SizedBox(
                   height: 10,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignUpPage()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF3DC185),
-                          foregroundColor: Colors.white),
-                      child: const Text('Register'),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignInPage()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF3DC185),
-                          foregroundColor: Colors.white),
-                      child: const Text('Login'),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                //   children: [
+                //     ElevatedButton(
+                //       onPressed: () {
+                //         Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => RegisterPage()),
+                //         );
+                //       },
+                //       style: ElevatedButton.styleFrom(
+                //           backgroundColor: Color(0xFF3DC185),
+                //           foregroundColor: Colors.white),
+                //       child: const Text('Register'),
+                //     ),
+                //     ElevatedButton(
+                //       onPressed: () {
+                //         Navigator.push(
+                //           context,
+                //           MaterialPageRoute(builder: (context) => LoginPage()),
+                //         );
+                //       },
+                //       style: ElevatedButton.styleFrom(
+                //           backgroundColor: Color(0xFF3DC185),
+                //           foregroundColor: Colors.white),
+                //       child: const Text('Login'),
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),

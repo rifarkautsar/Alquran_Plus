@@ -63,11 +63,14 @@ class Verse {
   });
 
   factory Verse.fromJson(Map<String, dynamic> json) {
+    String cleanedTranslation =
+        json['translation']?.replaceAll(RegExp(r'<sup[^>]*>.*?<\/sup>'), '') ??
+            '';
     return Verse(
       id: json['id'],
       verseKey: json['verse_key'],
       textUthmani: json['text_uthmani'],
-      translation: json['translation'].replaceAll(RegExp(r'<sup.*?</sup>'), ''),
+      translation: cleanedTranslation,
     );
   }
 }
