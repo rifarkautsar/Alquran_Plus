@@ -14,10 +14,6 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     // Inisialisasi kalender Hijriah
     final hijriDate = HijriCalendar.now();
-    print(
-        'Tanggal Hijriah: ${hijriDate.hDay} ${hijriDate.longMonthName} ${hijriDate.hYear}');
-    print('Tanggal Gregorian: ${DateTime.now()}');
-
     return Drawer(
       child: Column(
         children: [
@@ -88,7 +84,7 @@ class Menu extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    '${hijriDate.hYear}',
+                                    '${hijriDate.hYear}H',
                                     style: const TextStyle(
                                       fontSize: 14,
                                       color: Colors.white,

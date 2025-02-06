@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:alquran_plus/models/quran_model.dart';
 
@@ -28,75 +29,85 @@ class SurahDetail extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Header dengan gambar latar belakang
           Container(
-            height: 65, // Mengubah tinggi keseluruhan container
+            width: double.infinity,
+            height: 65,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/header_surah.png'), // Pastikan path gambar sesuai
-                fit: BoxFit.cover,
+              color: const Color(0xFFF1E4C6),
+            ),
+
+            // Header dengan gambar latar belakang
+            child: Center(
+              child: Container(
+                height: 65, // Mengubah tinggi keseluruhan container
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: CachedNetworkImageProvider(
+                        'assets/images/header_surah.png'), // Pastikan path gambar sesuai
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    // Lingkaran kiri
+                    Padding(
+                      padding: const EdgeInsets.only(left: 33.0),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          surah.revelationPlace,
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                    // Judul Surah
+                    Padding(
+                      padding: const EdgeInsets.only(right: 3.0),
+                      child: Text(
+                        surah.nameSimple,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black54,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    // Lingkaran kanan
+                    Padding(
+                      padding: const EdgeInsets.only(right: 26.0),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          '${surah.versesCount}',
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Lingkaran kiri
-                Padding(
-                  padding: const EdgeInsets.only(left: 33.0),
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      surah.revelationPlace,
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-                // Judul Surah
-                Padding(
-                  padding: const EdgeInsets.only(right: 3.0),
-                  child: Text(
-                    surah.nameSimple,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-                // Lingkaran kanan
-                Padding(
-                  padding: const EdgeInsets.only(right: 26.0),
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      '${surah.versesCount}',
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
           ),
-
 
           // List ayat
           Expanded(
@@ -110,7 +121,8 @@ class SurahDetail extends StatelessWidget {
                     // Ayat dalam teks Arab
                     Container(
                       width: double.infinity, // Lebar maksimal layar
-                      color: _getBackgroundColor(index), // Warna background berbeda
+                      color: _getBackgroundColor(
+                          index), // Warna background berbeda
                       padding: const EdgeInsets.all(14.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -128,9 +140,11 @@ class SurahDetail extends StatelessWidget {
                           const SizedBox(height: 8),
                           // Terjemahan di sebelah kiri
                           Text(
-                            '${verse.id}. ${verse.translation}',
+                            '${index + 1}. ${verse.translation}',
                             style: const TextStyle(
-                                fontSize: 16, color: Colors.black54),
+                              fontSize: 16,
+                              color: Colors.black54,
+                            ),
                             textAlign: TextAlign.left,
                           ),
                         ],

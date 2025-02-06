@@ -24,7 +24,7 @@ class SignUpPageState extends State<SignUpPage> {
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [const Color(0xFF57CE5D), const Color(0xFF6AB16D)],
+                colors: [const Color(0xFF6AB16D), const Color(0xFF52B957)],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:alquran_plus/models/quran_model.dart';
 import 'package:alquran_plus/screen/fragment/surahdetail.dart';
@@ -28,7 +29,8 @@ class SurahList extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage('assets/images/logo_id.png'),
+                          image: CachedNetworkImageProvider(
+                              'assets/images/logo_id.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
