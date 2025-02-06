@@ -1,15 +1,32 @@
 # alquran_plus
 
-A new Flutter project.
+Tugas Besar Pemrograman Web
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Selamat datang di Al-Quran Plus, aplikasi yang dirancang untuk memberikan pengalaman membaca Al-Quran yang lengkap dan nyaman bagi umat Islam
 
-A few resources to get you started if this is your first Flutter project:
+**Fitur-Fitur Utama:**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Fitur Al-Quran Digital
+   - Navigasi mudah untuk mencari surat dan ayat.
+   - Menyediakan terjemahan lengkap dalam bahasa Indonesia.
+   - Audio qari Mishari.
+2. Bookmark dengan Manajemen Folder
+   - Pengguna dapat menyimpan ayat favorit dalam folder yang dapat dibuat dan dikelola sendiri.
+   - Fungsi CRUD (Create, Read, Update, Delete) untuk folder bookmark.
+3. Kalender Hijriah
+   - Menampilkan tanggal Hijriah secara real-time.
+   - Informasi disajikan dalam menu utama aplikasi.
+4. Jadwal Sholat 
+   - Jadwal sholat yang terintegrasi dengan lokasi pengguna.
+   - Notifikasi waktu sholat.
+5. Arah Kiblat (Compass)
+   - Fitur untuk menunjukkan arah kiblat berdasarkan sensor perangkat.
+6. About Us
+   - Informasi tentang aplikasi dan tim pengembang.
+
+Email: rizkifatahillahkautsar@gmail.com
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
